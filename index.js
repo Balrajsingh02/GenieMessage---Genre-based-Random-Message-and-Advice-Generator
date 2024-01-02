@@ -110,3 +110,5 @@ const messageApp = (Genre, msg, advice) => {
 };
 
 messageApp(saveRandomGenre, saveRandomMsg, saveRandomAdvice);
+
+// I will update this, make it more shorter using objects.
