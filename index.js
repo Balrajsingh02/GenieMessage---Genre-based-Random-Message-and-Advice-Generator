@@ -58,6 +58,18 @@ const msgObject = {
   ],
 };
 
+//dom access
+
+// start
+let button = document.getElementById("button");
+console.log(button);
+let genre = document.getElementById("genre");
+let fullMessage = document.getElementById("full-message");
+let fullAdvice = document.getElementById("full-advice");
+
+//end
+
+// functions
 const randomChoice =
   randomGenres[Math.floor(Math.random() * randomGenres.length)];
 
@@ -76,13 +88,34 @@ const messageGeneratorFunction = (choice, obj, advice) => {
     }
   }
 
-  return `\n Random Genre Choice is: ${choiceToday} \n \n Message:👇 \n ${msgToday} \n \n Advice From Us: ☺ \n ${randomAdvice}`;
+  // return `\n Random Genre Choice is: ${choiceToday} \n \n Message:👇 \n ${msgToday} \n \n Advice From Us: ☺ \n ${randomAdvice}`;
+
+  return {
+    choiceNow: choiceToday,
+    msgNow: msgToday,
+    adviceNow: randomAdvice,
+  };
 };
 
-let finalMessage = messageGeneratorFunction(
-  randomChoice,
-  msgObject,
-  AdviceList
-);
+// let finalMessage = messageGeneratorFunction(
+//   randomChoice,
+//   msgObject,
+//   AdviceList
+// );
 
-console.log(finalMessage);
+// console.log(finalMessage);
+
+// button handler
+
+button.addEventListener("click", function () {
+  finalMessage = messageGeneratorFunction(
+    randomGenres[Math.floor(Math.random() * randomGenres.length)],
+    msgObject,
+    AdviceList
+  );
+  //DOM update
+  genre.innerText = finalMessage.choiceNow;
+  fullMessage.innerText = finalMessage.msgNow;
+  fullAdvice.innerText = finalMessage.adviceNow;
+  button.innerText = "Show More";
+});
