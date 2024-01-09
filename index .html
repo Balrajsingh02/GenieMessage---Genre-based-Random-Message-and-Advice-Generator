@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Genie Message</title>
+
+    <!-- fevicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/fevicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="fevicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/fevicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/fevicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/fevicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <section>
+    <section id="main-section">
       <h1>Genie Message</h1>
       <div id="genre">Genre for You!</div>
       <div class="messageAdvice">Message</div>
@@ -17,6 +44,17 @@
       <div id="message" class="messageAdvice">Advice</div>
       <div id="full-advice" class="fullMessageAdvice">Whole Advice</div>
       <button id="button">Show Me</button>
+    </section>
+
+    <!-- section 2 -->
+    <section id="genie-section">
+      <h1>Genie Message</h1>
+      <p>
+        GenieMessage: A JavaScript function for generating random messages and
+        advice based on selected genres. It randomly selects messages and advice
+        from specified genres, providing inspirational content.
+      </p>
+      <button id="button2">Click Here</button>
     </section>
     <script src="index.js"></script>
   </body>

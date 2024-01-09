@@ -61,8 +61,14 @@ const msgObject = {
 //dom access
 
 // start
+// section first showing
+
+let button2 = document.getElementById("button2");
+let sectionDisplay = document.getElementById("main-section");
+let genieDisplay = document.getElementById("genie-section");
+
+// after that section showing
 let button = document.getElementById("button");
-console.log(button);
 let genre = document.getElementById("genre");
 let fullMessage = document.getElementById("full-message");
 let fullAdvice = document.getElementById("full-advice");
@@ -88,8 +94,6 @@ const messageGeneratorFunction = (choice, obj, advice) => {
     }
   }
 
-  // return `\n Random Genre Choice is: ${choiceToday} \n \n Message:👇 \n ${msgToday} \n \n Advice From Us: ☺ \n ${randomAdvice}`;
-
   return {
     choiceNow: choiceToday,
     msgNow: msgToday,
@@ -97,15 +101,13 @@ const messageGeneratorFunction = (choice, obj, advice) => {
   };
 };
 
-// let finalMessage = messageGeneratorFunction(
-//   randomChoice,
-//   msgObject,
-//   AdviceList
-// );
-
-// console.log(finalMessage);
-
 // button handler
+
+button2.addEventListener("click", function () {
+  //DOM update
+  sectionDisplay.style.display = "flex";
+  genieDisplay.style.display = "none";
+});
 
 button.addEventListener("click", function () {
   finalMessage = messageGeneratorFunction(
@@ -113,7 +115,7 @@ button.addEventListener("click", function () {
     msgObject,
     AdviceList
   );
-  //DOM update
+
   genre.innerText = finalMessage.choiceNow;
   fullMessage.innerText = finalMessage.msgNow;
   fullAdvice.innerText = finalMessage.adviceNow;
