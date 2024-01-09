@@ -116,7 +116,7 @@ button.addEventListener("click", function () {
     AdviceList
   );
 
-  genre.innerText = finalMessage.choiceNow;
+  genre.innerText = `Genre - ${finalMessage.choiceNow}`;
   fullMessage.innerText = finalMessage.msgNow;
   fullAdvice.innerText = finalMessage.adviceNow;
   button.innerText = "Show More";
